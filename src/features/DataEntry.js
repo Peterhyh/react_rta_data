@@ -4,17 +4,13 @@ const DataEntry = () => {
 
     const [word, setWord] = useState();
 
-    const handleTextChange = (value) => {
-        setWord(value);
-    };
-
 
     return (
         <div>
             <input
                 type="text"
                 value={word}
-                onChange={handleTextChange}
+                onChange={(e) => setWord(e.target.value)}
             />
             <p>{word}</p>
         </div>
