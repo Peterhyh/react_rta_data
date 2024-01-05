@@ -11,7 +11,7 @@ const DataEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        console.log('data:', formData);
     }
 
     return (
