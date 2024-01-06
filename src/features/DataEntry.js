@@ -8,32 +8,32 @@ const DataEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("test");
+        console.log('handledValue');
     }
 
     return (
-        <div>
-            <div className='progyny_phones_container'>
-                <h5>Progyny Phones</h5>
 
-                <form onSubmit={handleSubmit} className='progyny_data_row'>
-                    <label>
-                        Handled Calls
-                        <input type='text' name='handledValue' value={handledValue} onChange={(e) => { setHandledValue(e.target.value) }} />
-                    </label>
+        <div className='progyny_phones_container'>
+            <h5>Progyny Phones</h5>
 
-                    <label>
-                        Incoming Calls
-                        <input type='text' name='incomingValue' value={incomingValue} onChange={(e) => { setIncomingValue(e.target.value) }} />
-                    </label>
+            <form onSubmit={handleSubmit} className='progyny_data_row'>
+                <label htmlFor='handledValue'>
+                    Handled Calls
+                </label>
+                <input type='text' id='handledValue' value={handledValue} onChange={(e) => setHandledValue(e.target.value)} />
 
-                </form>
+
+                <label htmlFor='incomingValue'>
+                    Incoming Calls
+                </label>
+                <input type='text' id='incomingValue' value={incomingValue} onChange={(e) => setIncomingValue(e.target.value)} />
+
                 <button type='submit'>Submit</button>
-
-            </div>
+            </form>
 
 
         </div>
+
     );
 };
 
