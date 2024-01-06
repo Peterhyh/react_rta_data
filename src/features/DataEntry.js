@@ -15,7 +15,8 @@ const DataEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        setHandledValue('');
+        setIncomingValue('');
 
         setData({
             ...data,
@@ -45,17 +46,21 @@ const DataEntry = () => {
                 <button type='submit'>Submit</button>
             </form>
             <table className='call_table_container'>
-                <tr>
-                    <th>Call Logs</th>
-                </tr>
-                <tr>
-                    <td>
-                        <h5>Incoming</h5>
-                        <p>{data.incoming}</p>
-                        <h5>Handled</h5>
-                        <p>{data.handled}</p>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Call Logs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h4>Incoming</h4>
+                            <p>{data.incoming}</p>
+                            <h4>Handled</h4>
+                            <p>{data.handled}</p>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
 
