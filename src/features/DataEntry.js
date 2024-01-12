@@ -43,7 +43,7 @@ const DataEntry = () => {
                 </label>
                 <input type='text' id='handledValue' value={handledValue} onChange={(e) => setHandledValue(e.target.value)} />
 
-                <button type='submit'>Submit</button>
+                <button type='submit'>Save</button>
             </form>
             <table className='call_table_container'>
                 <thead>
@@ -54,9 +54,9 @@ const DataEntry = () => {
                 <tbody>
                     <tr>
                         <td>
-                            <h4>Incoming Call</h4>
+                            <h4>Incoming</h4>
                             <p>{data.incoming}</p>
-                            <h4>Handled Call</h4>
+                            <h4>Handled</h4>
                             <p>{data.handled}</p>
                         </td>
                     </tr>
