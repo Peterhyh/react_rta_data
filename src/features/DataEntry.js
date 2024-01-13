@@ -29,7 +29,7 @@ const DataEntry = () => {
     return (
 
         <div className='progyny_phones_container'>
-            <h1>Call Log</h1>
+            <h1>Calls</h1>
 
             <form onSubmit={handleSubmit} className='progyny_data_row'>
 
