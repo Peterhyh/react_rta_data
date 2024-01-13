@@ -54,9 +54,9 @@ const DataEntry = () => {
                 <tbody>
                     <tr>
                         <td>
-                            <h4>Incoming</h4>
+                            <h1>Incoming</h1>
                             <p>{data.incoming}</p>
-                            <h4>Handled</h4>
+                            <h1>Handled</h1>
                             <p>{data.handled}</p>
                         </td>
                     </tr>
