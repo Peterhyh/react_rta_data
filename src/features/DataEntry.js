@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 const DataEntry = () => {
 
-    const [handledValue, setHandledValue] = useState('');
-    const [incomingValue, setIncomingValue] = useState('');
+    const [file, setFile] = useState('');
 
     const tableData = {
         incoming: '',
@@ -15,15 +14,11 @@ const DataEntry = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setHandledValue('');
-        setIncomingValue('');
 
-        console.log(incomingValue);
-        console.log(handledValue);
+        console.log(file);
         setData({
             ...data,
-            incoming: incomingValue,
-            handled: handledValue
+            incoming: file,
         });
     }
 
@@ -36,14 +31,9 @@ const DataEntry = () => {
             <form onSubmit={handleSubmit} className='progyny_data_row'>
 
                 <label htmlFor='incomingValue'>
-                    Incoming Calls
+                    Upload Data
                 </label>
-                <input type='file' id='incomingValue' value={incomingValue} onChange={(e) => setIncomingValue(e.target.value)} />
-
-                <label htmlFor='handledValue'>
-                    Handled Calls
-                </label>
-                <input type='text' id='handledValue' value={handledValue} onChange={(e) => setHandledValue(e.target.value)} />
+                <input type='file' id='incomingValue' value={file} onChange={(e) => setFile(e.target.value)} />
 
                 <button type='submit'>Save</button>
             </form>
