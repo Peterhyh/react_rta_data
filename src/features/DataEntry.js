@@ -18,6 +18,8 @@ const DataEntry = () => {
         setHandledValue('');
         setIncomingValue('');
 
+        console.log(incomingValue);
+        console.log(handledValue);
         setData({
             ...data,
             incoming: incomingValue,
