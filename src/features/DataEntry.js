@@ -38,7 +38,7 @@ const DataEntry = () => {
                 <label htmlFor='incomingValue'>
                     Incoming Calls
                 </label>
-                <input type='text' id='incomingValue' value={incomingValue} onChange={(e) => setIncomingValue(e.target.value)} />
+                <input type='file' id='incomingValue' value={incomingValue} onChange={(e) => setIncomingValue(e.target.value)} />
 
                 <label htmlFor='handledValue'>
                     Handled Calls
