@@ -4,10 +4,6 @@ const DataEntry = () => {
 
     const [file, setFile] = useState('');
 
-    const tableData = {
-        incoming: '',
-        handled: '',
-    };
 
     const [data, setData] = useState(tableData);
 
