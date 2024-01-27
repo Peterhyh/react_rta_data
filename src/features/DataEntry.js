@@ -2,54 +2,30 @@ import { useState } from 'react';
 
 const DataEntry = () => {
 
-    const [file, setFile] = useState('');
+    const [uploadedImg, setUploadedImg] = useState(null);
 
-
-    const [data, setData] = useState(tableData);
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log(file);
-        setData({
-            ...data,
-            incoming: file,
-        });
+    const handleUploadedImage = e => {
+        setUploadedImg(e.target.files[0]);
     }
+
 
 
     return (
 
         <div className='progyny_phones_container'>
-            <h1>Call Log</h1>
+            <label htmlFor='uploadImage'>
+                Upload Data:
+            </label>
+            <input id='uploadedImage' type='file' accept='image/*' onChange={handleUploadedImage} />
 
-            <form onSubmit={handleSubmit} className='progyny_data_row'>
 
-                <label htmlFor='incomingValue'>
-                    Upload Data
-                </label>
-                <input type='file' id='incomingValue' value={file} onChange={(e) => setFile(e.target.value)} />
+            {uploadedImg && (
+                <div>
+                    <img src={URL.createObjectURL(uploadedImg)} alt='user uploaded image' />
+                </div>
+            )}
 
-                <button type='submit'>Save</button>
-            </form>
-            <table className='call_table_container'>
-                <thead>
-                    <tr>
-                        <th>Call Logs</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <h5>Incoming</h5>
-                            <p>{data.incoming}</p>
-                            <h5>Handled</h5>
-                            <p>{data.handled}</p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
 
 
         </div>
