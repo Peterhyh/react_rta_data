@@ -41,13 +41,6 @@ const DataEntry = () => {
             )}
 
 
-            {/* {uploadedImg && (
-                <div>
-                    <img src={URL.createObjectURL(uploadedImg)} alt='user uploaded image' />
-                </div>
-            )} */}
-
-
 
 
         </div>
