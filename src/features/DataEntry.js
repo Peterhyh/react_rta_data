@@ -1,13 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createWorker } from 'tesseract.js';
 
 const DataEntry = () => {
 
     const [uploadedImg, setUploadedImg] = useState(null);
+    const [textResult, setTextResult] = useState('');
 
     const handleUploadedImage = e => {
         setUploadedImg(e.target.files[0]);
     }
 
+
+
+    const convertImageToText = async () => {
+        const worker = await createWorker("eng");
+        const ret = await worker.recognize(uploadedImg);
+        const data = ret.data.text
+        console.log(data);
+        setTextResult(data);
+        await worker.terminate();
+    }
+
+    useEffect(() => {
+        convertImageToText();
+    }, [uploadedImg])
 
 
     return (
@@ -18,12 +34,18 @@ const DataEntry = () => {
             </label>
             <input id='uploadedImage' type='file' accept='image/*' onChange={handleUploadedImage} />
 
+            {textResult && (
+                <div>
+                    <p>{textResult}</p>
+                </div>
+            )}
 
-            {uploadedImg && (
+
+            {/* {uploadedImg && (
                 <div>
                     <img src={URL.createObjectURL(uploadedImg)} alt='user uploaded image' />
                 </div>
-            )}
+            )} */}
 
 
 
