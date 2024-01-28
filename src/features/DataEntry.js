@@ -30,7 +30,7 @@ const DataEntry = () => {
 
         <div className='progyny_phones_container'>
             <label htmlFor='uploadImage'>
-                Data Chart:
+                Upload Data:
             </label>
             <input id='uploadedImage' type='file' accept='image/*' onChange={handleUploadedImage} />
 
