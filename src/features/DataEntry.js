@@ -10,6 +10,10 @@ const DataEntry = () => {
         setUploadedImg(e.target.files[0]);
     }
 
+    const handleConsoleLog = () => {
+        console.log(textResult)
+    }
+
 
 
     const convertImageToText = async () => {
@@ -39,6 +43,9 @@ const DataEntry = () => {
                     <p>{textResult}</p>
                 </div>
             )}
+            <button onClick={handleConsoleLog}>
+                Console Log
+            </button>
 
 
 
