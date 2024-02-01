@@ -44,7 +44,7 @@ const DataEntry = () => {
                 </div>
             )}
             <button onClick={handleConsoleLog}>
-                Console Log
+                Print
             </button>
 
 
